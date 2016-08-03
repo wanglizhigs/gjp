@@ -1,0 +1,116 @@
+body {
+  background: #fafafa;
+  font-family: "Microsoft Yahei",Tahoma, Helvetica, Arial, "SimSun", sans-serif;
+  color: #333;
+  .nopm;
+}
+ul,li{
+  .nopm;
+  list-style:none;
+}
+p{ .nopm; }
+
+//颜色变量
+@bg-red:#FF0000;
+@bg-grey:#eee;
+@bg-green:#008000;
+@bg-white:#fff;
+
+@dh:100px;
+@mh:@dh + 200px;
+
+//Mixins
+.nopm{
+  padding:0;
+  margin:0;
+}
+.rounded-corners(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+.gjp-box{
+  margin: 50px auto 0 auto;
+  width: 492px;
+  height: @mh;
+  background-color: @bg-grey;
+  .rounded-corners;
+  padding: 5px 0px;
+  .top{
+    height:@dh;
+    .t-left{
+      float:left;
+      width:180px;
+      height:@dh;
+      text-align:right;
+      .box{
+        margin-top:12px;
+        width:180px;
+        height:60px;
+        background:@bg-red;
+        line-height:60px;
+        color:#fff;
+        font-size:50px;
+      }
+    }
+    .t-right{
+      float:left;
+      width:312px;
+      height:@dh;
+      text-align:center;
+      .zhan-ch{
+        font-size:22px;
+        margin-top:10px;
+      }
+      .zhan-en{
+        font-size:12px;
+      }
+      .zhan{
+        color:@bg-red;
+        font-size:22px;
+      }
+    }
+  }
+  .middle{
+    background:@bg-green;
+    width:100%;  
+    color:@bg-white;
+    ul{
+      width:100%;
+      height:@dh;
+      padding:20px 0px;
+      li{
+        writing-mode:tb-rl;
+        float:right;
+        padding:0px 10px ;
+        height:@dh;
+        font-weight: bold;
+      }
+    }
+  }
+  .bottom{
+    text-align: center;
+    padding:10px 0px;
+    .line{
+      height:3px;
+      background:@bg-red;
+      width:90%;
+      margin:2px auto;
+      position: relative;
+    }
+    .line:after{
+      content:"";
+      display:block;
+      width: 0;
+      height: 0;
+      border-bottom: 12px solid @bg-red;
+      border-right: 30px solid transparent;
+      position: absolute;
+      right: -8px;
+      top: -9px;
+    }
+  }
+}
